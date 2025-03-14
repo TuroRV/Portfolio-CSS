@@ -1,0 +1,350 @@
+/*
+Paletas de color:
+#9a998c
+#a2a392
+#d5d0cd
+#d4cdc3
+#f8f4e3
+*/
+
+/*Esta regla hace que el scroll de la página sea
+una transición suave al clickar en los enlaces del nav*/
+html {
+  scroll-behavior: smooth;
+  scroll-padding: 5rem;
+}
+
+/*Propiedad de reseteo de los márgenes y padding además de aplicar 
+border box a toda la página*/
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/*Color de fondo al body y fuente de letra de la página*/
+body {
+  background-color: #f8f4e3;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+/*Display del header, color de fondo, márgenes y padding, y sombreado. Todas las cards
+y secciones de la página tienen el mismo sombreado*/
+header {
+  display: flex;
+  flex-flow: row wrap;
+  background-color: #d4cdc3;
+  padding: 1%;
+  margin-top: 8vh;
+  margin-bottom: 1%;
+  box-shadow: 0px 3px 15px rgba(0,0,0,0.2);
+}
+
+/*Tamaño de la imagen y un margen para que no quede pegada al 
+siguiente contenedor*/
+header img {
+  width: 15vw;
+  margin-right: 5vw;
+  margin-left: 5vw;
+}
+
+/*Ancho del segundo div del header para que se muestre al lado de la imagen*/
+.header2 {
+  width: 70vw;
+}
+
+/*Las propiedades del nav con los "a" con space-evenly y color blanco. Text decoration none para que no
+tengan el subrayado. Position sticky para que el nav se quede siempre arriba y podamos navegar por la página
+en todo momento*/
+nav {
+  position: sticky;
+  top: 0px;
+  height: 15vh;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-evenly;
+  align-content: center;
+  padding: 1vw;
+  background-color: #9a998c;
+  color: white;
+  text-decoration: none;
+  box-shadow: 0px 3px 15px rgba(0,0,0,0.2);
+}
+
+/*Añadimos un padding y una transición a los "a" para que al volver del hover
+no cambie de golpe al estado inicial*/
+nav a {
+  padding: 15px;
+  transition: 0.3s;
+}
+
+/*Efecto hover coloreando el padding del nav y aplicandole un borde redondeado, con una transición*/
+nav a:hover {
+  background-color: #d4cdc3;
+  border-radius: 15px;
+  transition: 0.3s;
+}
+
+/*Propiedad para que no nos cambien de color los "a" del nav una vez visitados*/
+nav a:link, nav a:visited {
+  color: white;
+  text-decoration: none;
+}
+
+/*Display grid para crear un layout irregular.*/
+.maincards {
+  display: grid;
+  grid-template-areas: 
+  "habilidades softskills softskills"
+  "formacion formacion imagenmain"
+  "intereses intereses tecnologias";
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 1vw;
+  align-items: center;
+  background-color: #d5d0cd;
+  padding: 2%;
+  box-shadow: 0px 3px 15px rgba(0,0,0,0.2);
+}
+
+/*Propiedades para que la imagen de una de las cards se adapte al contenedor*/
+#imgmain{
+  max-width: 100%;
+  max-height: 100%;
+  border-radius: 5px;
+}
+
+/*Centrado del título del main*/
+.titulo h1{
+  text-align: center;
+  font-size: 40px;
+  margin: 4vh;
+  margin-top: 5vh;}
+
+/*Etiquetas para las areas del grid*/
+.habilidades {grid-area: habilidades;}
+.formacion {grid-area: formacion;}
+.intereses {grid-area: intereses;}
+.softskills {grid-area: softskills;}
+.tecnologias {grid-area: tecnologias;}
+.imagenmain {grid-area: imagenmain;}
+
+
+/*Propiedades de las "cards" del main con flex column para que salga títulos
+y párrafos ordenados verticalmente.*/
+main article {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  height: 30vh;
+  width: 100%;
+  background-color: #a2a392;
+  margin-top: 1%;
+  margin-bottom: 1%;
+  padding: 2%;
+  border-radius: 5px;
+  box-shadow: 0px 3px 15px rgba(0,0,0,0.2);
+}
+
+/*Propiedad para que las ul no se salgan de las cards del main*/
+main article ul,main article h2 {
+  padding-left: 2vw;
+  overflow: hidden;
+  list-style-position: inside;
+}
+
+/*Esta clase cards es la de proyectos personales, con flex y space evenly*/
+.cards {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-evenly;
+}
+
+/*Propiedades de las cards del apartado de proyectos.*/
+.card {
+  width: 30vw;
+  text-align: center;
+  background-color: #d5d0cd;
+  padding: 2vh;
+  border-radius: 5px;
+  box-shadow: 0px 3px 15px rgba(0,0,0,0.2);
+}
+
+/*Propiedad de la imagen de las cards con tamaño.*/
+.card img {
+  width: 25vw;
+  height: 25vh;
+  border-radius: 5px;
+  margin-top: 2vh;
+}
+
+/*Propiedad del título de sección*/
+.proyectos h1 {
+  text-align: center;
+  font-size: 40px;
+  margin: 4vh;
+}
+
+/*Seccion de idiomas con display flex*/
+.idiomas {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  margin-top: 6vh;
+  margin-bottom: 2vh;
+  background-color: #d4cdc3;
+  padding-bottom: 5vh;
+  box-shadow: 0px 3px 15px rgba(0,0,0,0.2);
+}
+
+/*Centrado del título de idiomas*/
+.idiomas h1 {
+  text-align: center;
+  font-size: 40px;
+  margin: 4vh;
+}
+
+/*Propiedades de la tabla de idiomas*/
+.tablaidiomas {
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+  border-radius: 5px;
+  box-shadow: 0px 3px 15px rgba(0,0,0,0.2);
+}
+
+/*Colapsado de la tabla y altura de las filas*/
+.tablaidiomas, th,td{
+  border-collapse: collapse;
+  height: 10vh;
+  text-align: center;
+}
+
+/*Color de fondo del thead*/
+.tablaidiomas thead {
+  background-color: #a2a392;
+}
+
+/*Color de fondo del tbody*/
+.tablaidiomas tbody {
+  background-color: #f8f4e3;
+}
+
+/*Propiedades flex de la sección de experiencia*/
+.experiencia {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/*Centrado del título de la sección de experiencia*/
+.experiencia h1 {
+  font-size: 40px;
+  margin: 4vh;
+}
+
+/*Propiedades de las cards del apartado experiencia*/
+.experiencia article {
+  width: 80%;
+  padding: 2rem;
+  background-color:#d4cdc3;
+  border-radius: 5px;
+  box-shadow: 0px 3px 15px rgba(0,0,0,0.2);
+}
+
+/*Selector adyacente para poner en cursiva el texto que sigue al título en la card*/
+.experiencia article h2+p {
+  font-style: italic;
+}
+
+/*Propiedades de la sección de contacto*/
+.contacto {
+  background-color:#d4cdc3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 5vh;
+  margin-top: 5vh;
+  margin-bottom: 5vh;
+}
+
+/*Centrado del título de la sección de contacto*/
+.contacto h1 {
+  font-size: 40px;
+  margin: 4vh;
+}
+
+/*Propiedades del formulario de contacto*/
+.contacto form {
+  padding: 2vh;
+  text-align: center;
+  background-color: #a2a392;
+  width: 50%;
+  border-radius: 5px;
+  box-shadow: 0px 3px 15px rgba(0,0,0,0.2);
+}
+
+/*Márgenes de los inputs del formulario*/
+.contacto form input {
+  margin: 2vh;
+  width: 80%;
+  height: 5vh;
+}
+
+/*Propiedad para darle tamaño al textarea*/
+.contacto form textarea {
+  margin-top: 2vh;
+  width: 80%;
+  height: 20vh;
+}
+
+/*Propiedades del botón del formulario, con una transición para que la vuelta del hover
+sea suave.*/
+.contacto button {
+color:black;
+background-color:#F8FAFC;
+padding: 5px;
+margin: 2vh;
+width: 10vw;
+height: 7vh;
+box-shadow: 0px 3px 15px rgba(0,0,0,0.2);
+transition: 0.3s;
+}  
+
+/*Propiedad hover para que al pasar sobre el botón cambie de color y de forma con una
+transición.*/
+.contacto button:hover {
+  transition: 0.3s;
+  border-radius: 25px;
+  background-color:#9a998c;
+  color: white;
+}
+
+/*Propiedades del footer de la página.*/
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  background-color: #9a998c;
+  height: 15vh;
+}
+
+/*Añadimos media queries para que las secciones de main y proyectos personales se muestren
+en columna en dispositivos pequeños*/
+
+@media (max-width: 600px) {
+  .maincards {
+    display: flex;
+    flex-direction: column;
+  }
+  .cards {
+    display: flex;
+    flex-direction: column;
+  }
+  .card {
+    width: 80vw;
+    margin: 3vh auto 3vh auto;
+  }
+}
